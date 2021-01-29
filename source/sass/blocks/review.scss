@@ -1,0 +1,186 @@
+.review {
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+  padding: 31px 30px 53px 26px;
+  background-color: #ffffff;
+}
+
+.review__info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 39.9%;
+
+  &::after {
+    @include pseudo-elem;
+    right: 0;
+    top: 10px;
+    width: 1px;
+    height: calc(100% - 10px) ;
+    background-color: $light-gray;
+  }
+}
+
+.review__client {
+  display: flex;
+  margin-bottom: 18px;
+
+  img {
+    margin-right: 25px;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    width: 34.7%;
+    padding-top: 2px;
+  }
+}
+
+.review__mail {
+  @include font(16, 28);
+  color: $text-blue;
+}
+
+.review__author {
+  @include font(18, 28);
+  font-weight: 700;
+}
+
+.review__date {
+  @include font(16, 28);
+}
+
+.review__rating {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  margin-top: 3px;
+}
+
+.review__rating-number {
+  @include font(20, 28);
+  margin-right: 5px;
+  font-weight: 700;
+  color: #ffcc00;
+}
+
+.review__rating-star {
+  width: 20px;
+  height: 14px;
+  background-image: url("../img/star.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.review__service {
+  @include font(16, 26);
+  display: flex;
+  flex-direction: column;
+
+  span {
+    @include font(18, 28);
+    color: $text-blue;
+  }
+}
+
+.review__text {
+  @include font(16, 28);
+  width: 60.1%;
+  max-height: 226px;
+  overflow-y: scroll;
+  padding-top: 2px;
+  padding-left: 24px;
+  padding-right: 25px;
+}
+
+
+@media (max-width: $desktop-min-width - 1) {
+
+  .review {
+    padding: 31px 30px 30px 26px;
+  }
+
+  .review__client {
+  
+    img {
+      width: 110px;
+      height: 120px;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+  
+    div {
+      width: 48%;
+    }
+  }
+
+  .review__mail {
+    @include font(14, 26);
+    color: $text-blue;
+  }
+  
+  .review__author {
+    @include font(16, 26);
+  }
+  
+  .review__date {
+    @include font(14, 26);
+  }
+
+  
+  .review__rating-number {
+    @include font(18, 28);
+  }
+
+  .review__text {
+    @include font(14, 20);
+  }
+}
+
+
+@media (max-width: $tablet-width - 1) {
+
+  .review {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .review__info {
+    width: 100%;
+    margin-bottom: 20px;
+
+    &::after {
+      display: none;;
+    }
+  }
+
+  .review__client {
+  
+    img {
+      height: 130px;
+      margin-right: 15px;
+    }
+
+    div {
+      width: 50%;
+    }
+  }
+
+  .review__service {
+    @include font(14, 24);
+  
+    span {
+      @include font(16, 26);
+    }
+  }
+
+  .review__text {
+    width: 100%;
+    padding: 0;
+    padding-top: 10px;
+    border-top: 1px solid  $light-gray;
+  }
+
+}

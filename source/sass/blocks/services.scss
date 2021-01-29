@@ -1,0 +1,170 @@
+.services {
+  padding-top: 87px;
+  padding-bottom: 93px;
+}
+
+.services__title {
+  @include font(36, 48);
+  margin: 0;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.services__list {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.services__item {
+  @include not-hover;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 118px 19px 30px;
+  border: 1px solid $light-gray;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center top 38px;
+  
+  img {
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    @include font(22, 32);
+    max-width: 202px;
+    margin: 0;
+    margin-bottom: 5px;
+    font-weight: 700;
+  }
+
+  p {
+    @include font(16, 28);
+    margin: 0;
+  }
+
+  &:hover,
+  &:focus {
+    @include hover;
+    background-color: $dark-gray;
+    color: #ffffff;
+
+  }
+}
+
+.services__item--1 {
+  background-image: url("../../img/service-1.png");
+}
+
+.services__item--2 {
+  background-image: url("../../img/service-2.png");
+}
+
+.services__item--3 {
+  background-image: url("../../img/service-3.png");
+}
+
+.services__item--4 {
+  background-image: url("../../img/service-4.png");
+}
+
+.services__item--5 {
+  background-image: url("../../img/service-5.png");
+}
+
+.services__item--6 {
+  background-image: url("../../img/service-6.png");
+}
+
+.services__item--7 {
+  background-image: url("../../img/service-7.png");
+}
+
+.services__item--8 {
+  background-image: url("../../img/service-8.png");
+}
+
+.services__item--9 {
+  background-image: url("../../img/service-9.png");
+}
+
+.services__item--10 {
+  background-image: url("../../img/service-10.png");
+}
+
+.services__item--11 {
+  background-image: url("../../img/service-11.png");
+}
+
+.services__item--12 {
+  background-image: url("../../img/service-12.png");
+}
+
+.services__to-all {
+  display: none;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+
+@media (max-width: $desktop-min-width - 1) {
+
+  .services__item {
+    width: 33.3%;
+    padding: 15px;
+    padding-top: 120px;
+
+    h3 {
+      @include font(18, 24);
+      margin-bottom: 10px;
+    }
+  
+    p {
+      @include font(14, 18);
+    }
+  }
+}
+
+@media (max-width: $tablet-width - 1) {
+
+  .services {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+  
+  .services__title {
+    @include font(30, 40);
+    margin-bottom: 30px;
+  }
+
+  .services__item {
+    padding: 80px 10px 15px;
+    background-size: 40px;
+    background-position: center top 15px;
+
+    h3 {
+      @include font(14, 18);
+    }
+  
+    p {
+      @include font(12, 16);
+    }
+
+    &:not(:nth-child(-n + 6)) {
+      display: none;
+    }
+  }
+
+  .services__to-all {
+    display: block;
+  }
+}
+
+@media (max-width: 500px) {
+  .services__item {
+    width: 50%;
+  }
+}

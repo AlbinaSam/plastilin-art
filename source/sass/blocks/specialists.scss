@@ -1,0 +1,132 @@
+.specialists {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 90px;
+  padding-bottom: 100px;
+}
+
+.specialists__title {
+  @include font(36, 48);
+  margin: 0;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.specialists__slider {
+  overflow: hidden;
+}
+
+.specialists__slider-pagination {
+  @include font (18, 28);
+  position: absolute;
+  right: 145px;
+  top: 98px;
+  font-weight: 300;
+  color: $light-gray;
+}
+
+.specialists__slider-controls {
+  position: absolute;
+  right: 15px;
+  top: 90px;
+  display: flex;
+}
+
+.specialists__slider-btn {
+  @include not-hover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid $light-gray;
+
+  &:hover,
+  &:focus {
+    @include hover;
+    background-color: $light-gray;
+  }
+}
+
+.specialists__slider-btn--prev {
+  transform: rotate(90deg);
+}
+
+.specialists__slider-btn--next {
+  transform: rotate(270deg);
+}
+
+.specialists__list {
+  @include list-reset;
+  display: flex;
+}
+
+.specialists__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 23%;
+  padding-top: 15px;
+  border: 1px solid $light-gray;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  div {
+    padding: 22px 20px 38px;
+    text-align: center;
+  }
+
+  h3 {
+    @include font(18, 28);
+    position: relative;
+    margin: 0;
+    margin-bottom: 25px;
+    font-weight: 300;
+
+    &::after {
+      @include pseudo-elem;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 67px;
+      height: 1px;
+      background-color: $light-gray;
+    }
+  }
+  
+
+  span {
+    @include font(16, 28);
+    color: $text-blue;
+  }
+}
+
+.specialists__to-all {
+  min-width: 261px;
+  margin: 50px auto 0;
+}
+
+@media (max-width: $tablet-width - 1) {
+
+  .specialists {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  .specialists__title {
+    @include font(26, 32);
+    margin-bottom: 80px;
+  }
+  
+  
+  .specialists__item {
+    div {
+      padding: 22px 15px 38px;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,154 @@
+.slider {
+  position: relative;
+  background-color: $blue;
+}
+
+.slider__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.slider__list {
+  @include list-reset;
+  display: flex;
+  max-width: 1920px;
+  width: 100%;
+}
+
+.slider__item {
+  flex-shrink: 0;
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: 293px;
+  background-image: url("../img/banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  h2 {
+    @include font(45, 48);
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 25px;
+  }
+
+  h3 {
+    @include font(18, 28);
+    margin: 0;
+    margin-bottom: 18px;
+    font-weight: 300;
+  }
+
+  ul {
+    @include list-reset;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 670px;
+  }
+
+  li {
+    @include font(16, 28);
+    margin-right: 30px;
+    margin-bottom: 15px;
+
+    svg {
+      margin-right: 5px;
+    }
+  }
+
+  a {
+    width: fit-content;
+    min-width: 262px;
+    margin-top: 16px;
+  }
+}
+
+
+.slider__item-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.slider__controls-wrapper {
+  position: relative;
+}
+
+.slider__controls {
+  position: absolute;
+  right: 15px;
+  bottom: 214px;
+  display: flex;
+}
+
+.slider__btn {
+  @include not-hover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  background-color: #bdd1e4;
+
+  &:hover,
+  &:focus {
+    @include hover;
+    background-color: #ffffff;
+  }
+}
+
+.slider__btn--prev {
+  transform: rotate(90deg);
+}
+
+.slider__btn--next {
+  transform: rotate(270deg);
+}
+
+@media (max-width: $desktop-min-width - 1) {
+  .slider__item {
+    padding-bottom: 100px;
+
+    h2 {
+      @include font(38, 46);
+    }
+
+    ul {
+      flex-direction: column;
+    }
+
+    li {
+      margin-right: 0;
+    }
+  }
+
+  .slider__controls {
+    bottom: 30px;
+  }
+}
+
+
+@media (max-width: $tablet-width - 1) {
+  .slider__item {
+    padding-top: 50px;
+    background-image: 
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+    url("../img/banner.jpg");
+    background-position: 60%;
+
+    h2 {
+      @include font(26, 32);
+      margin-bottom: 20px;
+    }
+  
+    h3 {
+      margin-bottom: 15px;
+    }
+
+    li {
+      @include font(14, 18);
+    }
+  }
+}
+
